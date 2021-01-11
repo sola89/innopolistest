@@ -1,18 +1,41 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 1 -->
+    <validate-component>
+      <some-component>
+        <!-- 2 -->
+        <validate-component></validate-component>
+      </some-component>
+
+      <some-component>
+        <!-- 3 -->
+        <validate-component>
+          <!-- 4 -->
+          <validate-component />
+          <validate-component />
+        </validate-component>
+      </some-component>
+      <!-- 5 -->
+      <validate-component></validate-component>
+    </validate-component>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ValidateComponent from "@/components/ValidateComponent.vue";
+import SomeComponent from "@/components/SomeComponent.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
-  }
-}
+    ValidateComponent,
+    SomeComponent,
+  },
+};
 </script>
+
+<style lang="sass">
+.space
+    margin-left: 30px
+</style>
